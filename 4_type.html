@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+In the typing.html, create a program to do a typing test.
+Run a timer when you start typing the given text in the text area.
+After 30 seconds, stop the timer and calculate, how many words and characters you managed to type.
+Display the results below the text area.
+To measure the time, use the JavaScript setTimeout() function.
+-->
+
+<html>
+	<head>
+		<title>Typing test</title>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<h1>How fast are your fingers?</h1>
+		<h3>You have 30 seconds. Just start typing...</h3>
+		<p>Nam strzelać nie kazano. - Wstąpiłem na działo<br>
+		I spójrzałem na pole; dwieście armat grzmiało.<br>
+		Artyleryi ruskiej ciągną się szeregi,<br>
+		Prosto, długo, daleko, jako morza brzegi;<br>
+		I widziałem ich wodza: przybiegł, mieczem skinął<br>
+		I jak ptak jedno skrzydło wojska swego zwinął;<br>
+		Wylewa się spod skrzydła ściśniona piechota<br>
+		Długą czarną kolumną, jako lawa błota,<br>
+		Nasypana iskrami bagnetów. Jak sępy<br>
+		Czarne chorągwie na śmierć prowadzą zastępy.<br>
+		Przeciw nim sterczy biała, wąska, zaostrzona,<br>
+		Jak głaz bodzący morze, reduta Ordona.</p>
+		
+		<textarea rows="15" cols="50" id="obszar_text"></textarea><br>
+		<div id="opis"></div>
+		
+		<script>
+		
+		var zmienna = document.getElementById("obszar_text");
+		zmienna.addEventListener("input", function(){
+		setTimeout(zapisz_tekst, 10000);});
+		
+		function zapisz_tekst(){
+		var zmienna2 = document.getElementById("obszar_text").value;
+		var ilosc_spacji = zmienna2.split(' ').length;	
+		alert('Koniec pisania!'); 
+    	document.getElementById("opis").innerHTML = "<br> <br> <br> Tekst wpisany brzmi: \n" + zmienna2 + "\nDługość tekstu wynosi: " + zmienna2.length + "\n a liczba wszystkich wyrazów wynosi: " + ilosc_spacji;
+    	}
+		</script>
+		
+	</body>
+</html>

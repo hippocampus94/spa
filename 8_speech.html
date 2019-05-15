@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!--
+Write a JavaScript program to write/generate a speech.
+Use speech.html with speech text excerpts.
+To create a sentence, take any text from the first array, any text from the second one, 
+any text from the third one, and finally, any text from the fourth array.
+Complete the n() function to create a random number for selecting text from arrays. Use Math.random()
+Display your speech, containing 5 sentences, in the console.
+-->
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Speech generator</title>
+	</head>
+	<body>
+		<h1>Speech generator :-)</h1>
+		<button onclick="createSpeech();">Create a speech</button>
+		<div id="speech"></div>
+
+		<script>
+			function createSentence() {
+					var fullSentence = new String();
+
+				//each array consists of 10 elements
+				var first = [	'Koleżanki i koledzy,', 'Z drugiej strony', 'Podobnie', 'Nie zapominajmy jednak, że',
+								'W ten sposób', 'Praktyka dnia codziennego dowodzi, że',
+								'Wagi i znaczenia tych problemów nie trzeba szerzej uzasadniać, ponieważ',
+								'Różnorakie i bogate doświadczenia', 'Troska organizacji, a szczególnie',
+								'Wyższe założenia ideowe, a także'
+							];
+				var second = [	'realizacja nakreślonych zadań programowych', 'zakres i miejsce szkolenia kadr',
+								'stały wzrost ilości i zakres naszej aktywności', 'aktualna struktura organizacji',
+								'nowy model działalności organizacyjnej', 'dalszy rozwój różnych form działalności',
+								'stałe zabezpieczenie informacyjno-propagandowe naszej działalności',
+								'wzmocnienie i rozwijanie struktur', 'konsultacja z szerokim aktywem',
+								'rozpoczęcie powszechnej akcji kształtowania podstaw'
+							];
+				var third = [	'zmusza nas do przeanalizowania', 'spełnia istotną rolę w kształtowaniu',
+								'wymaga sprecyzowania i określenia', 'pomaga w przygotowaniu i realizacji',
+								'zabezpiecza udział szerokiej grupie w kształtowaniu', 'spełnia ważne zadania w wypracowaniu',
+								'umożliwia w większym stopniu tworzenie', 'powoduje docenianie wagi',
+								'przedstawia interesującą próbę sprawdzenia', 'pociąga za sobą proces wdrażania i unowocześnienia'
+							];
+				var fourth = [ 	'istniejących warunków administracyjno-finansowych.', 'dalszych kierunków rozwoju.',
+								'systemu powszechnego uczestnictwa.', 'postaw uczestników wobec zadań stawianych przez ogranizacje.',
+								'nowych propozycji.', 'kierunków postępowego wychowania.', 'systemu szkolenia kadr odpowiadającego potrzebom.',
+								'odpowiednich warunków aktywizacji.', 'modelu rozwoju.', 'form oddziaływania.'
+							];
+				var numer1 = n();
+				var numer2 = n();
+				var numer3 = n();
+				var numer4 = n();
+				fullSentence = first[numer1] + " " + second[numer2] + " " + third[numer3] + " " + fourth[numer4] + " ";
+				return fullSentence;
+			}
+
+			// returns random integer from 0 to 9
+			function n() {
+			var randomNumber = Math.floor(Math.random()*9)+1;
+			return randomNumber;
+			}
+			
+			function createSpeech(){
+			
+			var mySpeech = "";
+			var i = 0;
+ 			while (i<5){
+			mySpeech = mySpeech + createSentence();
+			i++
+			}
+			
+				console.log(mySpeech);
+				document.getElementById("speech").innerHTML = mySpeech;
+			}
+			
+				
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!--
+In the events.html, write a JavaScript program to display a message in the console ‘You clicked the button X times’.
+Put a code in an external script.
+Create a function and a button event.
+Display a message in the console each time the user clicks on the button.
+Replace X with the number of clicks.
+Check the results in the Chrome DevTools.
+-->
+
+<html>
+	<head>
+		<title>Reacting to events</title>
+		<meta charset="UTF-8">
+		
+	</head>
+	<body>
+		<h1>Reacting to events</h1>
+		<p id="message">waiting for your action ...</p>
+		<button id="button" type="button" >Click</button>
+		<div id="pole"></div>
+		
+		<!-- uwaga! nalezy umiescic odwolanie do skryptu
+		w elemencie body,
+		bo jesli script bylby w head, to wykonalby sie przed wszystkim
+		co w body-->
+		
+		<script type="text/javascript" src="js/skrypt.js"></script>
+		
+	<body>
+</html>

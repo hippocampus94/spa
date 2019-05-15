@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--
+1. Based on the list of books below, create in the books.html an array of five objects, where each object
+describes a single book.
+2. Iterate through the array of books and display in the console the details of books in paperback.
+-->
+
+<html>
+	<head>
+		<title>Display books list</title>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<h1>Display books list</h1>
+		
+				<div id="pole"></div>
+			
+				
+		<script>
+		
+function ksiazka(id, title, author, format, price)  {   // konstruktor
+	this.id = id;
+	this.title = title;
+	this.author = author;
+	this.format = format;
+	this.price = price;
+}
+
+var ksiazka1 = new ksiazka(1,"The Return of Duck and Goose","Sir Piggy","paperback",19.99);
+var ksiazka2 = new ksiazka(2,"The Adventures of Duck and Goose","D. Cow","hardback",18.99);
+var ksiazka3 = new ksiazka(3,"My Friend is a Duck","A. Parrot","paperback",14.99);
+var ksiazka4 = new ksiazka(4,"‘Duck and Goose’ Cheat Sheet for Students","Polly Parrot","paperback",5.99);
+var ksiazka5 = new ksiazka(5,"‘Duck and Goose’: an allegory for modern times?","Bor Ing","ebook",59.99);
+
+var listaKsiazek = [ksiazka1, ksiazka2, ksiazka3, ksiazka4, ksiazka5];
+
+var uchwyt = document.getElementById("pole");
+var i = 0;
+uchwyt.innerHTML = null;
+while(i<listaKsiazek.length) {
+	console.log(listaKsiazek[i]);
+	uchwyt.innerHTML= uchwyt.innerHTML + listaKsiazek[i].id + " " + listaKsiazek[i].title + " " + listaKsiazek[i].author + " " + listaKsiazek[i].format + " " + listaKsiazek[i].price + '<br>';
+	i++;
+};
+		
+		</script>
+		
+
+	</body>
+</html>

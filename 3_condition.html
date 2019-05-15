@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<!--
+The variables name, surname and age contain your personal data.
+Enter the data and save them in the variables.
+In the condition.html document, write a JavaScript program to display your data in 
+the console provided you pressed Ok button in the "confirm" popup window.
+Check the results in the Chrome DevTools.
+-->
+<html>
+	<head>
+		<title>Wykonaj warunek</title>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<h1>Wykonaj warunek</h1>
+		<p>Display data one the console</p>
+		<input type="text" id="pole1"> Podaj swoje imię</input>
+		<br><br>
+		<input type="text" id="pole2"> Podaj swoje nazwisko</input>
+		<br><Br>
+		<input type="submit" id="przycisk" value="zatwierdź dane" onclick="zapamietajDane()" />
+
+
+		<script>
+			// enter your name, surname
+			// ...
+			function zapamietajDane(){
+			var imie = document.getElementById("pole1").value;
+			var nazwisko = document.getElementById("pole2").value;
+			if (confirm("Czy podać w konsoli i w alercie Twoje imię i nazwisko?")) {
+			   console.log(imie + nazwisko);
+			   alert(imie + nazwisko)
+			   } else {
+			   alert("Wybrano opcję: Anuluj");
+			 } 
+			
+			}
+			
+			
+			// display your personal data on the console
+			// ...
+			
+			// 
+		</script>
+	</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--
+Open the mobile.html document. Then create an object describing your mobile phone.
+The object should consist of at least five properties of different types (string, number, boolean, array, object).
+Add a button and display the mobile phone description in a popup window after clicking on the button.
+-->
+
+<html>
+	<head>
+		<title>Create mobile phone</title>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<h1>Create mobile phone</h1>
+		<script>
+		var myMobilePhone = {
+		
+				phoneNumber: 510100100,
+				model:       'Redmi S3',
+				producer:	 'Xiaomi',
+			   isCamera:	 true, 
+				languages:   ['English', 'Polish', 'Chinese'],	
+		};
+		
+		function wyswietl(){
+		alert(
+		"My phone number is: "+ myMobilePhone.phoneNumber + 
+		"\nMy model is: " + myMobilePhone.model +
+		"\nThe producer is: " + myMobilePhone.producer +
+		"\nIs a camera? " + myMobilePhone.isCamera +
+		"\nLanguages: " + myMobilePhone.languages
+		);
+		
+		}
+		
+		
+		</script>
+		<input type="button" id="przycisk" value="My Phone Description" onClick="wyswietl()" \>
+		
+		
+	</body>
+</html>

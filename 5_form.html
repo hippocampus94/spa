@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!--
+The form does not have to look exactly the same, as shown, but it must contain the same information.
+To improve the form quality, use the bootstrap framework.
+Create an object to store the form data. Add a method ‘display()’ for displaying the object properties in the console.
+Add a ‘Submit’ button below the form.
+After clicking on the button, save the form data (input fields) in the object. To retrieve the input field values, you can use the jQuery framework.
+Then call the object method for displaying data in the console.
+In the form.html document, create a form according to the university form excerpt.
+-->
+
+<html>
+	<head>
+		<title>Fill in a form</title>
+		<meta charset="UTF-8">
+	
+		<style>
+		table, td, th {
+		border: 1px solid black;
+		border-collapse: collapse;
+		align: center;
+		}
+		td, th {
+		padding: 10px;
+		}
+		th { 
+		align: left;
+		background-color: lightgrey;
+		}		
+</style>
+
+<script src="jquery-3.3.1.min.js"></script>
+	</head>
+
+
+<body>
+	<img src="http://uek.krakow.pl/files/common/uczelnia/logo/10.04.logo_bordo%20PL.jpg" />
+	<!-- <form action="mailto:e-mail" method="post" enctype="text/plain"> -->
+	<form id="myform">
+	<div>
+		<table>
+			<tr>
+				<td>Surname (family name)</td>
+				<td><input type="text" name="surname" id="surname"></td>
+			</tr>
+			<tr>
+				<td>Name (names) / first name:</td>
+				<td><input type="text" name="name" id="name"></td>
+			</tr>
+			<tr>
+				<td>Gender:</td>
+				<td>
+				<input type="radio" name="gender" value="male">male
+				<input type="radio" name="gender" value="female">female
+				</td>
+			</tr>
+			<tr>
+				<td>Father's first name</td>
+				<td><input type="text" name="father" id="father"></td>
+			</tr>	
+			<tr>
+				<td>Mother's first name</td>
+				<td><input type="text" name="mother" id="mother"></td>
+			</tr>	
+			<tr>
+				<td>Date of birth</td>
+				<td><input type="date" name="date" id="date-input"></td>
+			</tr>	
+			<tr>
+				<td>Place of birth</td>
+				<td><input type="text" name="place" id="place"></td>
+			</tr>
+			<tr>
+				<td>Citizenship (country)</td>
+				<td><input type="text" name="country" id="country"></td>
+			</tr>	
+			<tr>
+				<td colspan="2" align="center"><br>
+				<input type="submit" value="Wyślij" id="przycisk" onclick="zapisz_dane()">
+				<!-- <input type="reset" value="Wyczyść"> -->
+				</td>
+			</tr>	
+		</table>
+	</div>
+	</form>
+	
+	<div id="obiekt"></div>
+		
+		<script>
+		
+			// a JavaScript code here ...
+			
+			function zapisz_dane() {
+			
+			var date = new Date($('#date-input').val());
+  			var day = date.getDate();
+  			var month = date.getMonth() + 1;
+  			var year = date.getFullYear();
+			
+			var obiektzdanymi = {
+			nazwisko: $("#surname").val(),
+			imie: $("#name").val(),
+			plec: $("input[name='gender']:checked").val(),
+			ojciec: $("#father").val(),
+			matka: $("#mother").val(),
+			dzien: day,
+			miesiac: month,
+			rok: year,
+			miejsce: $("#place").val(),
+			panstwo: $("#country").val(),
+			display() {
+			alert(this.nazwisko + " " + this.imie + " " + this.plec +" " + this.ojciec + " " + this.matka + " " + this.dzien + " " + this.miesiac +" " + this.rok +" " + this.miejsce + " " + this.panstwo);
+			console.log(this.nazwisko + " " + this.imie + " " + this.plec +" " + this.ojciec + " " + this.matka + " " + this.dzien + " " + this.miesiac +" " + this.rok +" " + this.miejsce + " " + this.panstwo);
+			}
+		};
+			obiektzdanymi.display();
+		}
+
+		</script>
+	</body>
+</html>

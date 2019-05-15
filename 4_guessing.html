@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<!--
+Write a JavaScript program where the program takes a random integer between 1 to 5, 
+the user is then prompted to input a guess number. If the user input matches 
+with guess number, the program will display a message "Good Work" 
+otherwise display a message "Sorry".
+Complete guessing.html with a JavaScript code.
+To enter a user's number and to display a message, use popup windows.
+-->
+<html>
+	<head>
+		<title>Try to guess</title>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<h1>Try to guess</h1>
+
+		<script>
+		 
+			// read user's number (popup window)
+		 var userNumber = prompt("Podaj liczbę zakresu 1..5 ");
+
+			// create a random number
+					 var randomNumber = Math.floor(Math.random()*5)+1;
+					 document.write(randomNumber);
+
+			// compare the numbers
+			
+			if(userNumber == randomNumber){
+			  alert("Good work")
+			}
+			else alert("Sorry");
+			// show results (popup window)
+						alert("User number was: " + userNumber + " random number was: " + randomNumber);
+
+			
+		</script>
+	</body>
+</html>

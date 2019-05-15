@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+
+<!--
+Open the alter.html document.
+Create a JavaScript program in which:
+0k! After clicking on the song title, the Part 2 is to be added at the end of the song title
+Ok! After clicking on the band name, the band description is to be displayed below the lyrics
+Ok! After clicking on the lyrics, the text is to be displayed in italics
+Ok! After double clicking on the page, the page background colour is to be changed to yellow
+Ok! When you try to copy the part of the lyrics, the copyright message is to be displayed in a popup window
+When you click on the visible band description, the band picture is to be displayed below the description (https://upload.wikimedia.org/wikipedia/en/d/d6/Pink_Floyd_-_all_members.jpg);note: to display the band picture, create a JavaScript code to add an <img> element below the description paragraph (see JavaScript HTML DOM Elements (Nodes), HTML DOM setAttribute() Method)
+-->
+
+<html>
+	<head>
+		<title>Change colour</title>
+		<meta charset="UTF-8">
+	</head>
+	
+	<body onDblClick = "zmianatla()" oncopy = "kopiowanie()">
+		<h1 id="tytulpiosenki" >Another Brick in the Wall</h1>
+		<h2> Eksperyment 1</h2>
+		<h2> Eksperyment 2</h2>
+		<h2> Eksperyment 3</h2>
+		<h2> Eksperyment 4</h2>
+		<h2> Eksperyment 5</h2>
+
+		<h3 id="bandname">Pink Floyd</h3>
+		<p id="lyrics">We don't need no education<br>
+		We don't need no thought control<br>
+		No dark sarcasm in the classroom<br>
+		Teachers leave them kids alone<br>
+		Hey! Teachers! Leave them kids alone<br>
+		All in all it's just another brick in the wall<br>
+		All in all you're just another brick in the wall</p>
+		
+		<p style="visibility: hidden;" id="obiekt">Pink Floyd were an English rock band formed in London.<br>
+		They achieved international acclaim with their progressive<br>
+		and psychedelic music.</p>
+		
+		<script>
+			// a JavaScript code here ...
+			
+			var zmienna = document.getElementById("tytulpiosenki");
+			zmienna.addEventListener("click", function(){
+			zmienna.innerHTML = zmienna.innerHTML + " Part 2";
+			});
+			
+			var zmienna2 = document.getElementById("bandname");
+			zmienna2.addEventListener("click", function(){
+			var zmienna3 = document.getElementById("obiekt");
+			zmienna3.style.visibility = "visible";
+			});
+				
+			var zmienna4 = document.getElementById("lyrics");
+			zmienna4.addEventListener("click", function(){
+			zmienna4.style.fontStyle = "italic";
+			});
+			
+			function zmianatla(){
+			document.body.style.backgroundColor = "yellow";
+			}
+			
+			function kopiowanie(){
+			alert("the copyright message: Nie wolno kopiować! Prawa autorskie są chronione");
+			}
+
+			var zmienna6 = document.getElementById("obiekt");
+			zmienna6.addEventListener("click", function() {
+			  var x = document.createElement("IMG");
+			  x.setAttribute("src", "https://upload.wikimedia.org/wikipedia/en/d/d6/Pink_Floyd_-_all_members.jpg");
+			  x.setAttribute("width", "304");
+			  x.setAttribute("height", "228");
+			  x.setAttribute("alt", "The Pulpit Rock");
+			  document.body.appendChild(x);
+			});
+			
+			var zmienna7 = document.getElementsByTagName("H2");
+			zmienna7[4].addEventListener("click", function() {
+			zmienna7[4].style.backgroundColor = "pink";
+			});
+		
+		</script>
+	</body>
+</html>

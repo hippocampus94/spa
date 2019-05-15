@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!--
+1. In the forsale.html document, create a constructor function House with the following properties and methods:
+• bedrooms (the number of bedrooms)
+• facilities (an array of house facilities, eg. [’garden’,’garage’,’swimming pool’])
+• price
+• address (an object of street, city)
+• phone (eg. 555 222 111)
+• changePrice(newPrice){...}
+• addFacility(newFacility){...}
+• description() { returns a string containing a full house description, i.e. bedroom, facilities, price, address)}
+2. Then use the constructor function to create a collection of five houses.
+3. Display the house details in the console (use the description method and a loop).
+4. Change a price of two houses and add at least one facility in three houses).
+5. Display the house details in the console.
+-->
+
+<html>
+	<head>
+		<title>Houses for sale</title>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<h1>Houses for sale</h1>
+		
+		<script>
+
+		var facilities = new Array();
+		
+		//==========1) stworzenie konstruktora
+		function House(bedrooms, facilities, price, address, phone) {
+	
+		this.bedrooms = bedrooms;
+		this.facilities = facilities;
+		
+		//person.interests[0] = "shopping";
+		this.price = price;
+		this.address = address;
+		this.phone = phone;
+		this.changePrice = function(newPrice){
+			this.price = newPrice;};
+			
+		this.addFacility = function(newFacility){
+			this.facilities[this.facilities.length] = newFacility;}
+			
+			
+		this.description = function () {
+		
+			var zmienna = "";
+			for (i=0; i<facilities.length; i++) {
+			zmienna = zmienna + facilities[i] + ", ";
+			}
+		   var zmienna2 = "Dane domu sa nastepujace: " + "ilosc pokoi jest rowna: " + bedrooms + " udogodnienia sa nastepujace: " + zmienna
+		   + " Cena wynosi: " + price + " dolarow" + " Adres to: " + address + " telefon: " + phone;
+		   
+			return zmienna2;
+		
+		
+		}
+		}
+		//=========koniec konstruktora
+		
+		//2) utworzenie pięciu domow w kolekcji
+		
+		var dom1 = new House(1,['swimming pool'],1000000,"Kolorowa 1","111-111-111");
+		var dom2 = new House(2,['swimming pool', 'sauna'],2000000,"Niebieska 2","222-222-222");
+		var dom3 = new House(3,['swimming pool', 'sauna', 'bieznia'],3000000,"Lesna 3","333-333-333");
+		var dom4 = new House(4,['swimming pool', 'sauna', 'bieznia', 'grill'],4000000,"Sloneczna 4","444-444-444");
+		var dom5= new House(8,['swimming pool', 'sauna', 'bieznia', 'garage'],5000000,"Ksiezycowa 5","555-555-555");
+		
+		var kolekcjaDomow = [dom1, dom2, dom3 ,dom4, dom5];
+		
+		// 3A) wyswietlenie w konsoli z petla
+		for (var i=0;i<kolekcjaDomow.length;i++){
+		console.log(kolekcjaDomow[i]);
+		}
+		
+		// 3B) wyswietlenie w konsoli z uzyciem metody description
+		console.log(dom1.description());
+		console.log(dom2.description());
+		console.log(dom3.description());
+		console.log(dom4.description());
+		console.log(dom5.description());
+		
+		//==========4A) zmiana cen dwoch domow
+		dom3.changePrice(2222222222);
+		//console.log(dom3);
+		dom5.changePrice(1000);		
+		//console.log(dom5);
+		//==========4B) Change a price of two houses and add at least one facility in three houses).
+		
+		dom1.addFacility('cinema');
+		dom1.addFacility('silownia');
+		dom2.addFacility('pole golfowe');
+		dom4.addFacility('stadnina');
+		dom4.addFacility('wlasna plaza');
+		
+		
+		// 5. Display the house details in the console.
+		for (var i=0;i<kolekcjaDomow.length;i++){
+		console.log(kolekcjaDomow[i]);
+		}
+				</script>
+	</body>
+</html>

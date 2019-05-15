@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Create DOM elements</title>
+		<meta charset="UTF-8">
+		<style>
+		table, td, th {
+		border: 1px solid black;
+		border-collapse: collapse;		}
+		td, th {
+		padding: 10px;
+		}
+		th { 
+		align: left;
+		background-color: lightgrey;
+		}
+		
+		
+</style>
+
+<script src="jquery-3.3.1.min.js"></script>
+
+
+
+	</head>
+	<body>
+		<script>
+			// a JavaScript code here ...
+			
+			// tabelka
+			var x = document.createElement("TABLE");
+			x.setAttribute("id", "moja tabeleczka");
+			document.body.appendChild(x);
+			
+			// 1 rzad
+			var y = document.createElement("TR");
+			y.setAttribute("id", "moj pierwszy rzad");
+			document.getElementById("moja tabeleczka").appendChild(y);
+			
+			var z = document.createElement("TH");
+			var t = document.createTextNode("Email");
+			z.appendChild(t);
+			document.getElementById("moj pierwszy rzad").appendChild(z);
+			
+			var z = document.createElement("TH");
+			var t = document.createTextNode("Connecting to the Internet");
+			z.appendChild(t);
+			document.getElementById("moj pierwszy rzad").appendChild(z);
+			
+			// 2 rzad
+			var y = document.createElement("TR");
+			y.setAttribute("id", "moj drugi rzad");
+			document.getElementById("moja tabeleczka").appendChild(y);
+			
+			var z = document.createElement("TD");
+			var t = document.createTextNode("receive/get/open an email");
+			z.appendChild(t);
+			document.getElementById("moj drugi rzad").appendChild(z);
+			
+			var z = document.createElement("TD");
+			var t = document.createTextNode("use/access/log onto the Internet");
+			z.appendChild(t);
+			document.getElementById("moj drugi rzad").appendChild(z);
+			
+			// 3 rzad
+			var y = document.createElement("TR");
+			y.setAttribute("id", "moj trzeci rzad");
+			document.getElementById("moja tabeleczka").appendChild(y);
+			
+			var z = document.createElement("TD");
+			var t = document.createTextNode("exchange email addresses");
+			z.appendChild(t);
+			document.getElementById("moj trzeci rzad").appendChild(z);
+			
+			var z = document.createElement("TD");
+			var t = document.createTextNode("access/connect to/locate the server");
+			z.appendChild(t);
+			document.getElementById("moj trzeci rzad").appendChild(z);
+			
+			// 4 rzad
+			var y = document.createElement("TR");
+			y.setAttribute("id", "moj czwarty rzad");
+			document.getElementById("moja tabeleczka").appendChild(y);
+			
+			var z = document.createElement("TD");
+			var t = document.createTextNode("open/send/contain an attachment");
+			z.appendChild(t);
+			document.getElementById("moj czwarty rzad").appendChild(z);
+			
+			var z = document.createElement("TD");
+			var t = document.createTextNode("browse/surf/search/scour the Internet");
+			z.appendChild(t);
+			document.getElementById("moj czwarty rzad").appendChild(z);
+			
+			// 5 rzad
+			var y = document.createElement("TR");
+			y.setAttribute("id", "moj piaty rzad");
+			document.getElementById("moja tabeleczka").appendChild(y);
+			
+			var z = document.createElement("TD");
+			var t = document.createTextNode("open/check your inbox");
+			z.appendChild(t);
+			document.getElementById("moj piaty rzad").appendChild(z);
+			
+			var z = document.createElement("TD");
+			var t = document.createTextNode("install/use/configure a firewall");
+			z.appendChild(t);
+			document.getElementById("moj piaty rzad").appendChild(z);
+			
+			
+			
+		</script>
+	</body>
+</html>
